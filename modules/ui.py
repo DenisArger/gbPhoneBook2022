@@ -1,5 +1,11 @@
+from modules.show_note import view_note
+from modules.add_note import add_note
+from modules.exporter_main import export_interface
+from modules.importer_main import import_interface
+
+
 def ui():
-    print('\nВас приветствует телефонная книга')
+    print('\nВас приветствует Phoneная книга')
 
     while True:
         print("")
@@ -21,15 +27,13 @@ def ui():
             continue
 
         if number == 1:
-            print("1: Посмотреть все записи")
+            view_note()
         elif number == 2:
-            print("2: Добавить запись")
+            add_note()
         elif number == 3:
-            print("3: Экспорт")
+            export_interface()
         elif number == 4:
-            print("4: Импорт")
-        elif number == 4:
+            import_interface()
+        elif number == 0:
             print("До новых встреч!")
-
-
-ui()
+            return

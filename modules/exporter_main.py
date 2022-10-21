@@ -17,7 +17,7 @@ def export_interface():
 def export(export_format):
     filename = False
     while filename == False:
-        filename = check_name(input("Введите имя файла: "))
+        filename = check_name(input("Введите Name файла: "))
 
     if export_format == "1":
         create_csv(filename)

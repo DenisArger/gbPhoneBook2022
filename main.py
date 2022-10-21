@@ -6,8 +6,8 @@ try:
     file = open("database.csv", "r")
     file.close()
 except:
-    with open("database.csv", 'w', newline='') as csvfile:
-        fieldnames = ["Фамилия", "Имя", "Телефон", "Описание"]
+    with open("database.csv", 'w', encoding='utf-8') as csvfile:
+        fieldnames = ["Surname", "Name", "Phone", "Description"]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 ui()

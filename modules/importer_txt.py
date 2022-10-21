@@ -5,7 +5,7 @@ def txt_import(filename):
     def new_string(file):
         string = file.readline
     counter = 0
-    with open(filename, "r") as file:
+    with open(filename, "r", encoding='utf-8') as file:
         flag = True
         while flag:
             current_string = file.readline()
@@ -19,11 +19,11 @@ def txt_import(filename):
                 name = file.readline().replace("\n", "")
                 tel = file.readline().replace("\n", "")
                 discription = file.readline().replace("\n", "")
-                if "Фамилия: " in family and "Имя: " in name and "Телефон: " in tel and "Описание: " in discription:
-                    family = family.replace("Фамилия: ", "")
-                    name = name.replace("Имя: ", "")
-                    tel = tel.replace("Телефон: ", "")
-                    discription = discription.replace("Описание: ", "")
+                if "Surname: " in family and "Name: " in name and "Phone: " in tel and "Description: " in discription:
+                    family = family.replace("Surname: ", "")
+                    name = name.replace("Name: ", "")
+                    tel = tel.replace("Phone: ", "")
+                    discription = discription.replace("Description: ", "")
                     add_note(family, name, tel, discription)
                     counter += 1
                 else:
